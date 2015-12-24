@@ -14,9 +14,13 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  return :equilateral if a==b and b==c
-  return :isosceles if a==b or b==c or a==c
-  :scalene
+  # option 1:
+  # return :equilateral if a==b and b==c
+  # return :isosceles if a==b or b==c or a==c
+  # :scalene
+
+  different_sides_count = [a,b,c].uniq.count
+  [nil, :equilateral, :isosceles, :scalene][different_sides_count]
 end
 
 # Error class used in part 2.  No need to change this code.
